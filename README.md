@@ -1,7 +1,7 @@
 
 ---
 
-# 🔥 Chaining Vulnerabilities for Account & System Compromise
+# 🔥 Realistic demo of Chaining Vulnerabilities by bad actors to compromise accounts and systems  
 
 ## Request Smuggling + XSS Full Exploitation Demo
 
