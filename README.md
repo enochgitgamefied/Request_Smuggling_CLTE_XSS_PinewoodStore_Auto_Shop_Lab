@@ -68,11 +68,13 @@ while True:
 
 ---
 
-### 🧩 **What’s happening?**
-
-In your script, the payload is:
 
 ```
+### 🧩 **What’s happening?**
+
+In the script, the payload is:
+
+
 0\r\n\r\nG
 ```
 
