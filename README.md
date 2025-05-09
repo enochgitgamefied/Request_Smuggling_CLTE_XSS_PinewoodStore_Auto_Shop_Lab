@@ -246,7 +246,7 @@ pedia \r\n
 
 This mechanism allows servers to **stream content** dynamically without knowing the total size up front.
 
-If you want, I can craft a **raw HTTP example** using these chunks, ready to paste into Burp Repeater or Turbo Intruder! Want me to do that? 🚀
+
 
 ### 🔧 How Do You See This in Burp?
 
