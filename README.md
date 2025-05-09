@@ -1,5 +1,3 @@
-Absolutely! Here’s a stronger, more focused README intro and note section with a **highlighted title** that emphasizes the vulnerability chaining, full system compromise, and the specific request smuggling + XSS cookie theft demo.
-
 ---
 
 ### 🔥 **Chaining Vulnerabilities for Account & System Compromise: Request Smuggling + XSS Full Exploitation Demo**
