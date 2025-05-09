@@ -40,6 +40,8 @@ chunks.
 
 ### 🧩 **Use python to test for CLTE for the site as shown by sending raw TCP**
 
+```
+
 import requests
 import time
 
