@@ -43,12 +43,9 @@ git clone https://github.com/enochgitgamefied/Request_Smuggling_CLTE_XSS_Pinewoo
 # Navigate into the lab directory
 cd Request_Smuggling_CLTE_XSS_PinewoodStore_Auto_Shop_Lab
 
-# Build the Docker image
-docker build -t pinewoodstore-lab .
+# Build and run the Docker image
+docker-compose up --build
 
-# Run the Docker container
-docker run -d -p 8080:80 --name pinewoodstore-lab pinewoodstore-lab
-```
 
 Once running, visit:
 
