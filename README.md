@@ -99,17 +99,3 @@ This lab includes:
 
 ---
 
-## 💬 Questions or Help?
-
-* Open an issue on GitHub if you encounter setup or usage problems
-* Share feedback, ideas, or improvements under GitHub Discussions (if available)
-
----
-
-If you want, I can also help you prepare:
-
-* ✅ A detailed attack **walkthrough.md** for the repo
-* ✅ Ready-to-use **Burp Suite or Turbo Intruder scripts** for smuggling payloads
-* ✅ A **Docker Compose** extension to add simulated victim traffic
-
-
