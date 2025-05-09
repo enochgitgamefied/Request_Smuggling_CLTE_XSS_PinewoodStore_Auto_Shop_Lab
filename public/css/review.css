@@ -1,0 +1,108 @@
+/* Review Page Styles */
+.review-hero {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.review-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.review-form {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+}
+
+.rating-input {
+    display: flex;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.rating-input input:checked ~ label,
+.rating-input label:hover,
+.rating-input label:hover ~ label {
+    color: #FFD700;
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.review-guidelines {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    align-self: start;
+    position: sticky;
+    top: 20px;
+}
+
+.review-guidelines h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.review-guidelines ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .review-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .review-guidelines {
+        position: static;
+        margin-top: 40px;
+    }
+}

@@ -1,0 +1,114 @@
+/* aboutus.css - Specific styles for About Us page only */
+
+/* About Page Container */
+.aboutus-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Main Title */
+.aboutus-main-title {
+    color: #036DA7;
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.5em;
+}
+
+/* Shop Section Layout */
+.aboutus-shop-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.aboutus-shop-text {
+    flex: 1;
+}
+
+.aboutus-shop-image-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Shop Image Styling */
+.aboutus-shop-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.aboutus-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Section Titles */
+.aboutus-section-title {
+    color: #D32F2F;
+    margin: 30px 0 15px 0;
+    font-size: 1.8em;
+}
+
+/* Features List */
+.aboutus-features-list {
+    padding-left: 20px;
+}
+
+.aboutus-features-list li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+/* Values Section */
+.aboutus-values {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.aboutus-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.aboutus-value-card {
+    background: white;
+    padding: 25px;
+    border-radius: 5px;
+    border-top: 4px solid #036DA7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.aboutus-value-card h3 {
+    color: #036DA7;
+    margin-top: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .aboutus-shop-section {
+        flex-direction: column;
+    }
+    
+    .aboutus-shop-image {
+        height: 300px;
+    }
+    
+    .aboutus-main-title {
+        font-size: 2em;
+    }
+}

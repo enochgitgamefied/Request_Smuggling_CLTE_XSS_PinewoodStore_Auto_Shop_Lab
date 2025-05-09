@@ -1,0 +1,51 @@
+/* footer.css - Minimal footer styles */
+
+.site-footer {
+    background: #036DA7;
+    color: white;
+    padding: 30px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-banner {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.footer-content h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.4em;
+    font-weight: normal;
+}
+
+.footer-info {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-info p {
+    margin: 5px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-banner {
+        padding: 15px 0;
+    }
+    
+    .footer-content h3 {
+        font-size: 1.2em;
+    }
+    
+    .footer-info {
+        font-size: 0.8em;
+    }
+}

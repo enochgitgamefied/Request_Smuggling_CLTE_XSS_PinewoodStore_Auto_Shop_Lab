@@ -1,0 +1,205 @@
+/* home.css - Specific styles for home page only */
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #036DA7 0%, #8B0000 100%);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.banner-content h2 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.banner-content p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+/* Featured Services */
+.featured-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-highlight {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-highlight:hover {
+    transform: translateY(-5px);
+}
+
+.service-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-highlight h3 {
+    color: #036DA7;
+    margin: 15px 0 5px;
+}
+
+.service-highlight p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.service-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #E7F1F8;
+    color: #036DA7;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Services Section */
+.services-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    color: #036DA7;
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-card .service-image {
+    height: 200px;
+}
+
+.service-card h3 {
+    padding: 20px 20px 0;
+    color: #036DA7;
+}
+
+.service-card p {
+    padding: 10px 20px;
+    color: #666;
+}
+
+.learn-more {
+    display: block;
+    padding: 15px;
+    background: #f5f5f5;
+    color: #036DA7;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* About Preview */
+.about-preview {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.shop-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 20px;
+    background: #f5f5f5;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.customer {
+    font-weight: bold;
+    color: #D32F2F;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #D32F2F;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.cta-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 60px 20px;
+    }
+    
+    .banner-content h2 {
+        font-size: 2em;
+    }
+    
+    .shop-image {
+        height: 250px;
+    }
+}

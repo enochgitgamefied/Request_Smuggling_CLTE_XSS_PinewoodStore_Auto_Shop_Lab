@@ -1,0 +1,331 @@
+/* =============================================
+   TESTIMONIALS PAGE STYLES
+   PinewoodStore Auto Shop
+   ============================================= */
+
+/* Base Styles */
+.testimonials-hero {
+    background: linear-gradient(135deg, #036DA7 0%, #2c3e50 100%);
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.testimonials-hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    background: radial-gradient(circle at 70% 30%,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 60%);
+    animation: gradientRotate 15s infinite linear;
+    z-index: 1;
+}
+
+@keyframes gradientRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Main Content Container */
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 30px;
+}
+
+/* Introduction Section */
+.testimonials-intro {
+    text-align: center;
+    margin-bottom: 70px;
+    padding: 0 20px;
+}
+
+.testimonials-intro h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.testimonials-intro h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #e74c3c;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.testimonials-intro p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Statistics Grid */
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 180px;
+    padding: 25px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #036DA7;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Testimonial Grid */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 40px;
+    margin: 70px 0;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 10px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: "\"";
+    /* Corrected: using escaped quote character */
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 5rem;
+    color: rgba(3, 109, 167, 0.05);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.testimonial-card h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.testimonial-card p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 25px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.customer-info {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    font-size: 0.95rem;
+}
+
+.customer-name {
+    font-weight: bold;
+    color: #036DA7;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.customer-vehicle,
+.service-date {
+    color: #7f8c8d;
+    display: block;
+    margin-top: 3px;
+    font-size: 0.9rem;
+}
+
+/* Leave Review Section */
+.leave-review {
+    text-align: center;
+    margin-top: 100px;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.leave-review h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.leave-review p {
+    font-size: 1.15rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .testimonial-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-hero {
+        padding: 80px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .stats-grid {
+        gap: 30px;
+    }
+
+    .stat-item {
+        min-width: 140px;
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        margin: 50px 0;
+    }
+
+    .leave-review {
+        padding: 40px 20px;
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-hero {
+        padding: 70px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .testimonials-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .stats-grid {
+        gap: 15px;
+    }
+
+    .stat-item {
+        min-width: calc(50% - 30px);
+        padding: 15px 10px;
+    }
+
+    .testimonial-card {
+        padding: 30px 25px;
+    }
+}

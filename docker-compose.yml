@@ -1,0 +1,67 @@
+version: '2.2'
+services:
+  ats7:
+    image: labats7
+    build:
+      context: .
+      dockerfile: docker/ats7/Dockerfile
+    expose:
+      - "8080"
+    ports:
+      - "80:8080"
+    depends_on:
+      - nginx
+      - mysql
+    links:
+      - nginx:linkednginx.net
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=pinewood_autoshop
+      - DB_USER=root
+      - DB_PASS=secret
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8002:80"
+    volumes:
+      - .:/app/
+    links:
+      - php
+      - mysql
+    depends_on:
+      - php
+      - mysql
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - .:/app/
+    links:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_NAME=pinewood_autoshop  # Must match MySQL service
+      - DB_USER=root
+      - DB_PASS=secret
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=pinewood_autoshop  # Must be consistent
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --init-file /docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_data:

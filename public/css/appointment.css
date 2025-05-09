@@ -1,0 +1,108 @@
+/* appointment.css */
+.appointment-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.appointment-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.calendar-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#calendar {
+    display: none;
+    /* Hide the original input */
+}
+
+#calendar-container {
+    margin-top: 15px;
+}
+
+.flatpickr-calendar {
+    width: 100% !important;
+    box-shadow: none !important;
+}
+
+.flatpickr-day {
+    border-radius: 50% !important;
+    height: 35px !important;
+    line-height: 35px !important;
+    margin: 2px !important;
+}
+
+.flatpickr-day.selected {
+    background: #036DA7 !important;
+    border-color: #036DA7 !important;
+}
+
+.flatpickr-day.today {
+    border-color: #D32F2F !important;
+}
+
+.flatpickr-day:hover {
+    background: #E7F1F8 !important;
+}
+
+.flatpickr-time input:hover {
+    background: #E7F1F8 !important;
+}
+
+/* Form Styles */
+.form-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    background: #D32F2F;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #B71C1C;
+}
+
+@media (max-width: 768px) {
+    .appointment-container {
+        grid-template-columns: 1fr;
+    }
+}

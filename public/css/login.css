@@ -1,0 +1,128 @@
+/* Login Page Styles with Brand Icon */
+.auth-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 2.5rem;
+}
+
+.auth-header img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid #036DA7;
+    padding: 8px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.auth-header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(3, 109, 167, 0.2);
+}
+
+.auth-header h2 {
+    color: #2c3e50;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.8em;
+}
+
+.auth-header p {
+    color: #7f8c8d;
+    font-size: 1em;
+    margin: 0;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95em;
+}
+
+.form-group input {
+    padding: 0.85rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #036DA7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3, 109, 167, 0.1);
+}
+
+.auth-actions {
+    margin-top: 1.5rem;
+}
+
+.auth-actions .cta-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1em;
+}
+
+.auth-footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.95em;
+}
+
+.auth-footer a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.auth-footer a:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .auth-card {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .auth-header img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.5em;
+    }
+}

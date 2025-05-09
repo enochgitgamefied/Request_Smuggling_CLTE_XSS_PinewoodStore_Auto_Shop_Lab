@@ -1,0 +1,60 @@
+/* services.css */
+.services-page {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.services-hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.services-hero h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.services-hero p {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+/* Services Container */
+.services-container {
+    padding: 0 20px;
+}
+
+.service-category {
+    margin-bottom: 60px;
+}
+
+.service-category h2 {
+    color: #D32F2F;
+    font-size: 2em;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #036DA7;
+}
+
+/* Service Grid */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.
