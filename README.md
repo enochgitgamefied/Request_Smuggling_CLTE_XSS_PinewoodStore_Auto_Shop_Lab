@@ -125,6 +125,159 @@ This allows attackers to:
 * Potentially gain access to admin-only or protected areas
 
 ---
+Great question! Let me break it down clearly.
+
+When you request a page like Wikipedia using a tool like **Burp Suite**, you’re working at the **HTTP layer**. By default, Wikipedia (and most major sites) uses **chunked transfer encoding** when the server sends **responses**, not when clients send requests.
+
+Let’s unpack this:
+
+---
+
+### 🔍 What is Chunked Transfer Encoding?
+
+Chunked transfer encoding is part of **HTTP/1.1**.
+It allows the server to **send a response in parts (“chunks”)** without knowing the full content length up front.
+
+Instead of sending:
+
+```
+Content-Length: 12345
+```
+
+the server sends:
+
+```
+Transfer-Encoding: chunked
+```
+
+Then the body looks like:
+
+```
+<length of chunk in hex>\r\n
+<data>\r\n
+<length of next chunk in hex>\r\n
+<data>\r\n
+...
+0\r\n
+\r\n
+```
+
+For example:
+
+```
+4\r\n
+Wiki\r\n
+6\r\n
+pedia \r\n
+0\r\n
+\r\n
+```
+
+---
+Let’s break it down line by line — this is how **HTTP chunked transfer encoding** works.
+
+---
+
+### 📦 1️⃣ → `4\r\n`
+
+This line says:
+
+* The **length of the next chunk** is `4` (hexadecimal), which equals `4` in decimal.
+* This tells the server: “Expect **4 bytes** of data next.”
+
+---
+
+### 📄 2️⃣ → `Wiki\r\n`
+
+This is the **4-byte data**:
+
+* `Wiki` (the actual content)
+* Followed by `\r\n` (carriage return + line feed) to mark the end of the chunk’s data.
+
+---
+
+### 📦 3️⃣ → `6\r\n`
+
+This line says:
+
+* The **length of the next chunk** is `6` (hexadecimal), which equals `6` in decimal.
+* This signals: “Expect **6 bytes** of data next.”
+
+---
+
+### 📄 4️⃣ → `pedia \r\n`
+
+This is the **6-byte data**:
+
+* `pedia ` (note the space at the end!)
+* Followed by `\r\n` to end this chunk.
+
+---
+
+### 📦 5️⃣ → `0\r\n`
+
+This marks the **last chunk**:
+
+* `0` means “no more data” (end of chunks).
+* Followed by `\r\n` to close the chunks section.
+
+---
+
+### ✅ Final → `\r\n`
+
+After the terminating `0` chunk, there’s a **final CRLF** that signals:
+
+* End of the **entire HTTP message** body.
+
+---
+
+### 🔗 Summary
+
+So together, this transmits:
+
+```
+4\r\n
+Wiki\r\n
+6\r\n
+pedia \r\n
+0\r\n
+\r\n
+```
+
+→ which the server interprets as:
+`Wiki` + `pedia ` = `Wikipedia ` (space included)
+
+This mechanism allows servers to **stream content** dynamically without knowing the total size up front.
+
+If you want, I can craft a **raw HTTP example** using these chunks, ready to paste into Burp Repeater or Turbo Intruder! Want me to do that? 🚀
+
+### 🔧 How Do You See This in Burp?
+
+✅ When you send a **GET** request to Wikipedia from Burp Repeater or Proxy,
+✅ Look at the **response** tab.
+✅ Under the **Raw** or **Hex** view, you’ll often see `Transfer-Encoding: chunked` in the headers.
+✅ The body will come in **chunked format** — Burp will usually auto-reassemble it for display,
+but if you switch to **Raw** you can see the chunks and CRLF structure.
+
+---
+
+### 🚀 How Is This Relevant to Testing?
+
+For **request smuggling**, you’re often crafting **requests** that:
+
+* Combine **Content-Length** + **Transfer-Encoding** headers (CL.TE or TE.CL mismatches).
+* Smuggle hidden payloads into how the frontend/backend parse chunks.
+
+But for **Wikipedia**, you generally observe **chunking on the response side**,
+unless you manually craft a **chunked POST request** to test upstream servers.
+
+If you want, I can generate:
+✅ An example Burp Repeater request with chunked body,
+✅ A sample smuggling payload for CL.TE attacks,
+✅ Or a Burp project setup guide for practicing chunked request manipulation.
+
+Would you like me to prepare one of those for you? Let me know! 🛠️
+
 
 ### 🔍 **2️⃣ Reflected Cross-Site Scripting (XSS)**
 
