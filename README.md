@@ -90,9 +90,6 @@ This lab includes:
 
 ---
 
-Sure! Here’s a refined README section that **first explains the two vulnerabilities separately**, their **individual impacts**, and then transitions into how they can be **chained together** for much more severe consequences.
-
-You can insert this into your README under a section like:
 
 ---
 
@@ -271,12 +268,7 @@ For **request smuggling**, you’re often crafting **requests** that:
 But for **Wikipedia**, you generally observe **chunking on the response side**,
 unless you manually craft a **chunked POST request** to test upstream servers.
 
-If you want, I can generate:
-✅ An example Burp Repeater request with chunked body,
-✅ A sample smuggling payload for CL.TE attacks,
-✅ Or a Burp project setup guide for practicing chunked request manipulation.
 
-Would you like me to prepare one of those for you? Let me know! 🛠️
 
 
 ### 🔍 **2️⃣ Reflected Cross-Site Scripting (XSS)**
