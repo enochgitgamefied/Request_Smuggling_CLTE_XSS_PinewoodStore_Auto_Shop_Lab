@@ -248,15 +248,100 @@ This mechanism allows servers to **stream content** dynamically without knowing 
 
 
 
-### 🔧 How Do You See This in Burp?
-
-✅ When you send a **GET** request to Wikipedia from Burp Repeater or Proxy,
-✅ Look at the **response** tab.
-✅ Under the **Raw** or **Hex** view, you’ll often see `Transfer-Encoding: chunked` in the headers.
-✅ The body will come in **chunked format** — Burp will usually auto-reassemble it for display,
-but if you switch to **Raw** you can see the chunks and CRLF structure.
+Great observation! Let me clarify this carefully.
 
 ---
+
+### 🔍 **Why You Don’t See Chunking in the GET Request**
+
+When you send a **GET request** (or **any HTTP request**) from Burp Repeater or Proxy to Wikipedia or another server,
+the **request** you send **does not use chunked encoding** — it’s usually a simple request like:
+
+```
+GET /wiki/Main_Page HTTP/1.1
+Host: en.wikipedia.org
+User-Agent: ...
+```
+
+That’s it.
+✅ It has **no** `Transfer-Encoding: chunked`.
+✅ It usually has **no body** (since GET requests normally don’t send one).
+✅ It’s straightforward.
+
+---
+
+### 🏗 **Where Does Chunked Transfer Encoding Appear?**
+
+It appears in the **HTTP response from the server to you** — **not** in your request.
+
+Example response (simplified):
+
+```
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+
+4\r\n
+Wiki\r\n
+6\r\n
+pedia \r\n
+0\r\n
+\r\n
+```
+
+✅ The server uses `Transfer-Encoding: chunked` **so it can stream parts of the response**
+without calculating the full `Content-Length` beforehand.
+
+---
+
+### 🔧 **How Do You See This in Burp?**
+
+✅ Send a **normal GET request** in Burp.
+✅ Go to the **Response** tab.
+✅ Look at the **Raw** or **Hex** view.
+✅ If the server used chunked encoding, you’ll see the chunks appear **in the response body** —
+BUT Burp’s **Pretty** view will often **reconstruct** the content, hiding the chunks from you for convenience.
+
+You only see the raw chunks if you switch to **Raw** or **Hex** view.
+
+---
+
+### ⚙️ **What About Chunked Requests?**
+
+While **responses** often use chunked encoding,
+**requests** from clients **rarely** do (unless you craft them deliberately for testing or smuggling attacks).
+
+For example, you can force a crafted POST request like:
+
+```
+POST /submit HTTP/1.1
+Host: target.com
+Transfer-Encoding: chunked
+
+4\r\n
+Wiki\r\n
+6\r\n
+pedia \r\n
+0\r\n
+\r\n
+```
+
+…but this is something **attackers or researchers craft by hand**,
+not something Wikipedia expects or that browsers generate by default.
+
+---
+
+### ✅ Summary
+
+| **Direction**                     | **Uses Chunked Encoding?**                 |
+| --------------------------------- | ------------------------------------------ |
+| GET request (client → server)     | ❌ No, unless specially crafted for testing |
+| POST request (client → server)    | ❌ No, unless manually crafted              |
+| Server response (server → client) | ✅ Often, to stream content                 |
+
+---
+
+
 
 ### 🚀 How Is This Relevant to Testing?
 
