@@ -159,8 +159,8 @@ Then the body looks like:
 \r\n
 ```
 
-For example: Sending wikipedia as request using chunked Transfer-Encoding is breat "wikipedia" into two chunks . Chunk 1 is "wiki" and chunk "2" is pedia. 
-It would calculate the length of each chunk in Hexadecimal. Length of wiki in Hex is "4" and pedia is "6". It would send it this way.
+For example: Sending wikipedia as request using chunked Transfer-Encoding. The first step is to break "wikipedia" into two chunks . Chunk 1 is "wiki" and chunk "2" is pedia. 
+Then it would calculate the length of each chunk in Hexadecimal. Length of wiki in Hex is "4" and pedia is "6". It would send it this way.
 
 ```
 4\r\n
