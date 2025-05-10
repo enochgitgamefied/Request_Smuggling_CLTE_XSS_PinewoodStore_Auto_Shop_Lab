@@ -30,14 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("INSERT INTO users (name, email, password, vehicle_info) VALUES (?, ?, ?, ?)");
             $stmt->execute([$name, $email, $hashedPassword, $vehicle_info]);
 
-            // Set session variables
-            $_SESSION['user_id'] = $pdo->lastInsertId();
-            $_SESSION['user_name'] = $name;
-            $_SESSION['just_registered'] = true;
-
-            // Redirect to account page
-            header("Location: /account.php");
-            exit;
+            // Set success flag for JavaScript
+            $_SESSION['registration_success'] = true;
         }
     } catch (PDOException $e) {
         $_SESSION['error'] = "Registration error: " . $e->getMessage();
@@ -67,10 +61,52 @@ include_once("_header.php");
         .form-actions {
             margin-top: 20px;
         }
+
+        /* Popup styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .modal-ok {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Success Popup Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Registration Successful!</h3>
+            <p>Your account has been created successfully.</p>
+            <button class="modal-ok" onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
     <div class="register-container">
         <div class="register-card">
             <div class="register-header">
@@ -201,6 +237,19 @@ include_once("_header.php");
                 modelSelect.innerHTML += `<option value="${model}">${model}</option>`;
             });
         });
+
+        // Success modal handling
+        function redirectToLogin() {
+            window.location.href = '/login.php';
+        }
+
+        // Check if registration was successful
+        <?php if (isset($_SESSION['registration_success'])): ?>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('successModal').style.display = 'block';
+            });
+            <?php unset($_SESSION['registration_success']); ?>
+        <?php endif; ?>
     </script>
 
     <?php include_once("footer.php"); ?>
