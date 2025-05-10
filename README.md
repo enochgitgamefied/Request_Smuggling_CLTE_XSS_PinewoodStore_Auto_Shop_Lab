@@ -351,7 +351,7 @@ For **request smuggling**, you’re often crafting **requests** that:
 * Combine **Content-Length** + **Transfer-Encoding** headers (CL.TE or TE.CL mismatches).
 * Smuggle hidden payloads into how the frontend/backend parse chunks.
 
-But for **Wikipedia**, you generally observe **chunking on the response side**,
+But for majority of  modern sites like **Wikipedia**, you generally observe **chunking on the response side**,
 unless you manually craft a **chunked POST request** to test upstream servers.
 
 
