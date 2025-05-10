@@ -122,13 +122,7 @@ This allows attackers to:
 * Potentially gain access to admin-only or protected areas
 
 ---
-Great question! Let me break it down clearly.
 
-When you request a page like Wikipedia using a tool like **Burp Suite**, you’re working at the **HTTP layer**. By default, Wikipedia (and most major sites) uses **chunked transfer encoding** when the server sends **responses**, not when clients send requests.
-
-Let’s unpack this:
-
----
 
 ### 🔍 What is Chunked Transfer Encoding?
 
