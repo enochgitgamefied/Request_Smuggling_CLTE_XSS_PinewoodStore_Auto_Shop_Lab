@@ -257,25 +257,8 @@ If the front-end **doesn’t parse this right**, the attacker can smuggle chunks
 
 ---
 
-## 🛡 **How to Defend Against It**
-
-✅ Make sure front-end and back-end use **consistent parsing rules**.
-✅ Strip or normalize conflicting headers (`Transfer-Encoding`, `Content-Length`).
-✅ Use modern, up-to-date proxy servers and load balancers.
-✅ Apply security patches that address smuggling vectors.
-✅ Test using tools like Burp Suite’s **Request Smuggler** extension.
 
 ---
 
-## 💡 **Want More?**
-
-If you want:
-✅ A demo with live payloads
-✅ Burp Suite config tips
-✅ Python scripts for crafting smuggled requests
-
-👉 Let me know — I can write you a hands-on walkthrough!
-
-Would you like me to prepare an **attack lab scenario** or **Burp config guide** for this? 🚀
 
 
