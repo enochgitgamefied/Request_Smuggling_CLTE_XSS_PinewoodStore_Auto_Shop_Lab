@@ -73,7 +73,7 @@ Watch the detailed **YouTube tutorial** where the full chain is explained and de
 * Summary of how the attack could lead to **complete system compromise**
 
 **YouTube link:** (https://www.youtube.com/watch?v=bGwsF3Q3tFs)
-*(replace this with the actual link)*
+
 
 ---
 
