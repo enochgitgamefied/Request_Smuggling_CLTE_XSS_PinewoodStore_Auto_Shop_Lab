@@ -72,7 +72,7 @@ Watch the detailed **YouTube tutorial** where the full chain is explained and de
 * Cookie theft and account takeover exploit
 * Summary of how the attack could lead to **complete system compromise**
 
-**YouTube link:** [→ Watch the Full Demo](https://www.youtube.com/your-tutorial-link-here)
+**YouTube link:** [→ Watch the Full Demo](https://www.youtube.com/watch?v=bGwsF3Q3tFs)
 *(replace this with the actual link)*
 
 ---
